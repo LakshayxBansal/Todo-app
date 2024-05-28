@@ -50,10 +50,11 @@ function App() {
   }
 
   const handleAdd = () => {
-    setTodos([...todos,{id:uuidv4(),todo , isCompleted:false}])
-    setTodo("");
-    console.log(todos)
-    saveTodo();
+    if(todo.trim().length > 0){
+      setTodos([...todos,{id:uuidv4(),todo , isCompleted:false}])
+      setTodo("");
+      saveTodo();
+    }
   }
 
   const handleChange = (e) => {
